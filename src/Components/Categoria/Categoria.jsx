@@ -1,16 +1,83 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "../Styles/Categorias.css";
-const Categorias = () => {
+
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "../../firebaseConfig";
+
+const Categorias = ({ children }) => {
+  const [listaCategoria, setListaCategoria] = useState([]);
+  const [Cate, setCate] = useState([]);
+
+  useEffect(() => {
+    const itemsCollection = collection(db, "Categorias");
+    getDocs(itemsCollection).then((res) => {
+      let arrayCategorias = res.docs.map((Categoria) => {
+        return {
+          ...Categoria.data(),
+          id: Categoria.id,
+        };
+      });
+      setListaCategoria(arrayCategorias);
+      //     // ESTO ES NUEVO
+      const firstCat =
+        listaCategoria.length > 0 &&
+        listaCategoria.find((e) => e.title === "Todos");
+      const otherCat =
+        listaCategoria.length > 0 &&
+        listaCategoria.filter((e) => e.title !== "Todos");
+      if (listaCategoria.length > 0) {
+        setCate([firstCat, ...otherCat]);
+      }
+    });
+  }, [listaCategoria]);
+  const cate = [
+    {
+      titulo: "Todos",
+      path: "/",
+      id: 1,
+    },
+    {
+      titulo: "Accion",
+      path: "/Categoria/Accion",
+      id: 2,
+    },
+    {
+      titulo: "Aventuras",
+      path: "/Categoria/Aventuras",
+      id: 3,
+    },
+    {
+      titulo: "Simulacion",
+      path: "/Categoria/Simulacion",
+      id: 1,
+    },
+    {
+      titulo: "Deportes",
+      path: "/Categoria/Deportes",
+      id: 2,
+    },
+    {
+      titulo: "Conduccion",
+      path: "/Categoria/Conduccion",
+      id: 3,
+    },
+  ];
+
   return (
-    <ul className="listado-categorias">
-      <Link to="/">Todos</Link>
-      <Link to="/Categoria/Accion">Accion</Link>
-      <Link to="/Categoria/Aventuras">Aventuras</Link>
-      <Link to="/Categoria/Conduccion">Conduccion</Link>
-      <Link to="/Categoria/Simulacion">Simulacion</Link>
-      <Link to="/Categoria/Deportes">Deportes</Link>
-    </ul>
+    <div>
+      <ul className="listado-categorias">
+        {cate?.map((Categoria) => {
+          return (
+            <Link key={Categoria.id} to={Categoria.path}>
+              {Categoria.titulo}
+            </Link>
+          );
+        })}
+      </ul>
+
+      {children}
+    </div>
   );
 };
 

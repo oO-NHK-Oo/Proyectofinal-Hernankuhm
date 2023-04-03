@@ -1,55 +1,59 @@
-import React from "react";
-import { useParams } from "react-router-dom";
-import { Products } from "../../ProductsMock";
-
+import Swal from 'sweetalert2'
+import React, { useContext } from "react";
+import { useEffect ,useState } from "react"
+import { useParams} from "react-router-dom";
+import {getDoc, collection, doc} from "firebase/firestore"
+import { db } from '../../firebaseConfig';
 import "../Styles/ItemDetailContainer.css";
-import "../Styles/ItemCount.css";
+import { CartContext } from "../../context/CartContext";
+import ItemDetail from '../ItemDetail/ItemDetail';
 
-import Card from "@mui/material/Card";
-
-import CardMedia from "@mui/material/CardMedia";
-import ItemCount from "../ItemCount/ItemCount";
 
 const ItemDetailContainer = () => {
   const { id } = useParams();
 
-  const productSelected = Products.find((element) => element.id === Number(id));
-  console.log(productSelected);
+  const { agregarAlCarrito, obtenerCantidadById } = useContext(CartContext)
 
+  const [productSelected, setProductSelected] = useState({})
 
+  useEffect(() => {
+    const itemCollection = collection(db, "Products");
+    const ref = doc(itemCollection, id);
+    getDoc(ref).then((res) => {
+      setProductSelected({
+        ...res.data(),
+        id: res.id,
+      });
+    });
+  }, [id]);
+  
+
+  const [items, setItems] = useState([]);
+
+ 
   const onAdd = (cantidad) => {
-    console.log(`se agrego al carrito ${cantidad} productos`);
+
+    let producto = {
+      ...productSelected,
+      cantidad
+
+
+    }
+
+    agregarAlCarrito(producto)
+    Swal.fire({
+      position: 'center',
+      icon: 'success',
+      title: 'Producto agregado',
+      showConfirmButton: false,
+      timer: 1000
+    })
   };
 
-
+  let cantidad = obtenerCantidadById(Number(id))
+  
   return (
-    <><div className="contenedor">
-      <div>
-        <Card className="Card-info" sx={{ width: 350, height: 450 }}>
-          <CardMedia sx={{ height: 450 }} image={productSelected.img} />
-        </Card>
-        <ItemCount stock={5} initial={1} onAdd={onAdd} />
-      </div>
-      {/* ----------------------------------------------------------- */}
-      <div className="texto-info">
-        <h1>{`Nombre: ${productSelected.nombre}`}</h1>
-        <h3>{`Categoria: ${productSelected.categoria}`}</h3>    
-        <h4>Idioma: </h4>
-        <img
-          id="imagen"
-          class="post_flagen"
-          src="https://www.gamestorrents.fm/wp-content/themes/GamesTorrent/css/images/flags/eng.png"
-          title="Idioma English"
-          alt="Idioma English"
-        ></img>
-      </div>
-      {/* ----------------------------------------------------------- */}
-     
-      {/* ----------------------------------------------------------- */}
-    </div>
-    <div>
-        <h5 className="descripcion">{`Descripcion: ${productSelected.descripcion}`}</h5>
-      </div></>
+    <ItemDetail productSelected={productSelected} onAdd={onAdd} cantidad={cantidad}/>
   );
 };
 

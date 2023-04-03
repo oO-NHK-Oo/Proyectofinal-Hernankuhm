@@ -5,7 +5,7 @@ export const Products = [
     descripcion: "Call of Duty: Infinite Warfare ofrece tres modos de juego únicos: Campaña, Multijugador y Zombies. Campaign es un regreso a las sólidas raíces militares de la franquicia, mientras mira audazmente hacia el futuro, ofreciendo una narrativa rica y atractiva que no se parece a nada en un juego de Call of Duty. El jugador se embarcará en una historia de estilo clásico sobre la guerra a gran escala, ambientada en un futuro donde el conflicto humano se ha extendido por todo nuestro sistema solar",
     categoria: "Accion",
     precio: 1200,
-    stock: 5,
+    stock: 3,
     img: "https://res.cloudinary.com/dzhlt253x/image/upload/v1677612698/imagenes%20para%20mi%20ecommerce/call-of-duty-infinity-war_d8uy72.jpg",
   },
   {
@@ -14,7 +14,7 @@ export const Products = [
     descripcion: "¡La experiencia MK11 definitiva! Toma el control de los protectores de Earthrealm en 2 aclamadas campañas de historia que doblan el tiempo mientras compiten para evitar que Kronika retroceda en el tiempo y reinicie la historia. Logro. la lista completa de 37 luchadores, incl. Lluvia, Mileena y Rambo.",
     categoria: "Deportes",
     precio: 1500,
-    stock: 5,
+    stock: 1,
     img: "https://res.cloudinary.com/dzhlt253x/image/upload/v1677612700/imagenes%20para%20mi%20ecommerce/Mortal-Kombat-11-pc-free-download_vzd9ak.jpg",
   },
   {
@@ -32,7 +32,7 @@ export const Products = [
     descripcion: "¡Tu Ultimate Horizon Adventure te espera! Explora los vibrantes y cambiantes paisajes de mundo abierto de México con una acción de conducción ilimitada y divertida en cientos de los mejores autos del mundo.",
     categoria: "Conduccion",
     precio: 1000,
-    stock: 5,
+    stock: 7,
     img: "https://res.cloudinary.com/dzhlt253x/image/upload/v1677612699/imagenes%20para%20mi%20ecommerce/FORZAHORIZON5_w7n447.png",
   },
   {
@@ -41,7 +41,7 @@ export const Products = [
     descripcion: "Tokio es invadida por fuerzas sobrenaturales mortales, perpetradas por un peligroso ocultista, que hace que la población de Tokio desaparezca en un instante. Alíate con una poderosa entidad espectral en su búsqueda de venganza y domina un poderoso arsenal de habilidades para desentrañar la oscura verdad detrás de la desaparición mientras ENFRENTAS LO DESCONOCIDO en Ghostwire: Tokio.",
     categoria: "Accion",
     precio: 1200,
-    stock: 5,
+    stock: 10,
     img: "https://res.cloudinary.com/dzhlt253x/image/upload/v1677612699/imagenes%20para%20mi%20ecommerce/Ghostwire-Tokyo-pc-free-download_zzkt7k.jpg",
   },
   {
@@ -50,7 +50,7 @@ export const Products = [
     descripcion: "Compite en una multitudinaria carrera en masa: ¡choca, grinda y ábrete paso hasta la meta! Personaliza a tu personaje con estilo para que lo vean tus amigos y tus competidores. Recorre un mundo abierto en bici, esquíes, tabla de snow o traje de alas en modo Carrera o en eventos multijugador.",
     categoria: "Deportes",
     precio: 1200,
-    stock: 5,
+    stock: 4,
     img: "https://res.cloudinary.com/dzhlt253x/image/upload/v1677612699/imagenes%20para%20mi%20ecommerce/riders-republic_nab9ff.jpg",
   },
   {
@@ -68,7 +68,7 @@ export const Products = [
     descripcion: "Stray es un juego de aventuras de gatos en tercera persona ambientado en los detallados callejones iluminados con luces de neón de una ciberciudad en decadencia y los turbios entornos de su sórdida parte más vulnerable. Deambula por los alrededores, defiéndete de amenazas imprevistas y resuelve los misterios de este lugar poco acogedor habitado por droides curiosos y criaturas peligrosas",
     categoria: "Aventuras",
     precio: 1200,
-    stock: 5,
+    stock: 6,
     img: "https://res.cloudinary.com/dzhlt253x/image/upload/v1677612700/imagenes%20para%20mi%20ecommerce/STRAY_n4qwd8.png",
   },
   {
@@ -77,7 +77,7 @@ export const Products = [
     descripcion: "¡El presidente está de vuelta! Demuéstrese una vez más como un dictador temido o un estadista amante de la paz en el estado insular de Trópico y conduzca el destino de su propia república bananera a través de cuatro épocas distintas.",
     categoria: "Simulacion",
     precio: 1800,
-    stock: 5,
+    stock: 2,
     img: "https://res.cloudinary.com/dzhlt253x/image/upload/v1678377494/Tropico6_mdmkkp.png",
   },
   {
@@ -86,7 +86,7 @@ export const Products = [
     descripcion: "Crea tu propio imperio del PC, desde sencillos diagnósticos y reparaciones hasta lujosas creaciones a medida que harían salivar a cualquier amante de los videojuegos. Con un mercado en expansión lleno de componentes auténticos y con precios realistas, por fin podrás dejar de soñar con ese PC perfecto para salir ahí fuera, montarlo y ver cómo responde en las pruebas de rendimiento.",
     categoria: "Simulacion",
     precio: 1700,
-    stock: 5,
+    stock: 8,
     img: "https://res.cloudinary.com/dzhlt253x/image/upload/v1678377494/Pcsimulator_z9uhsr.png",
   },
   {

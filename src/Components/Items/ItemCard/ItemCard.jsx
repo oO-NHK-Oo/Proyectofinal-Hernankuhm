@@ -22,7 +22,7 @@ const ItemCard = ({ element }) => {
         </Typography>
       </CardContent>
       <div className="contenedor-leerMas">
-      <Link to={`/item/${element.id}`}>
+      <Link to={`/itemDetail/${element.id}`}>
         <Button className="leerMas" variant="contained">
           Leer mas
         </Button>

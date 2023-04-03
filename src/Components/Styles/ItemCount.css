@@ -5,6 +5,8 @@
 }
 
 
+
+
 .contador{
     display: flex;
     height: 10px;
@@ -12,12 +14,12 @@
     align-items: center;
     text-align: center;
     top: 15px;
-    
-   
-    
+    width: 115%;
+      
 }
 
 .contador button{
+    
     height: 20px;
     right:  15px;
     color: rgb(255, 255, 255);
