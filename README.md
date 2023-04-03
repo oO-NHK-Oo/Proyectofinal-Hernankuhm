@@ -20,5 +20,3 @@ git clone https://github.com/oO-NHK-Oo/PreEntrega2Nestor-kuhm.git
 * ## Comparto un gif de mi proyecto mostrando su funcionalidad
 
 
-
-
