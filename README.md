@@ -21,3 +21,4 @@ git clone https://github.com/oO-NHK-Oo/PreEntrega2Nestor-kuhm.git
 
 ![primera parte del gif final](https://user-images.githubusercontent.com/114186343/229867340-6b91c6b8-a7e4-4155-af22-68f6f08ff9c2.gif)
 
+![segunda parte del gif final](https://user-images.githubusercontent.com/114186343/229870235-88d131ba-d191-481e-a8fe-839668f1acc4.gif)
